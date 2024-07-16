@@ -1,8 +1,11 @@
 <html>
-<head>
-</head>
-<body>
-<h1>{{question.question_text}}</h1>
-<p>Published date: {{question.pub_date}}</p>
-</body>
+  <head> </head>
+  <body>
+    <h1>{{question.question_text}}</h1>
+    <p>Published date: {{question.pub_date}}</p>
+
+    {% for choice in choices %}
+    <li><a href="/polls/{{question.id}}/vote/{{choice.id}}">{{ choice.choice_text }}</a></li>
+    {% endfor %}
+  </body>
 </html>
